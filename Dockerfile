@@ -7,4 +7,4 @@ COPY . .
 RUN chmod +x gradlew
 RUN ./gradlew clean build -x test
 
-ENTRYPOINT ["sh","-c","java -jar build/libs/*.jar"]
+ENTRYPOINT ["sh","-c","java -jar $(ls build/libs/*.jar | grep -v plain | head -n 1)"]
