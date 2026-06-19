@@ -8,3 +8,7 @@ RUN chmod +x gradlew
 RUN ./gradlew clean build -x test
 
 ENTRYPOINT ["sh","-c","java -jar $(ls build/libs/*.jar | grep -v plain | head -n 1)"]
+
+# git add .
+# git commit -m "change db to mysql"
+# git push
